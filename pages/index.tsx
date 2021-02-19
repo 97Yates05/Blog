@@ -1,7 +1,13 @@
+import Header from '../components/Header';
+import HomeContainer from '../components/HomeContainer';
+import Footer from '../components/Footer';
+
 export default function Home() {
   return (
     <div>
-      这是博客主页
+      <Header />
+      <HomeContainer />
+      <Footer />
     </div>
   );
 }
