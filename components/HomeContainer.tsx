@@ -32,18 +32,14 @@ export const HomeContainer = () => {
             />
             <div className="p-4">
               <div
-                className="font-bold text-xl cursor-pointer"
+                className="font-bold text-2xl cursor-pointer"
                 onClick={() => handleClick(post.id, post.title)}
               >
                 {post.title}
               </div>
-              <div>
+              <div className="flex space-x-2 text-xs">
                 {post.tags.map((tag, index) => {
-                  return (
-                    <span className="mr-1 text-xs" key={index}>
-                      {tag}
-                    </span>
-                  );
+                  return <span key={index}>{tag}</span>;
                 })}
               </div>
             </div>

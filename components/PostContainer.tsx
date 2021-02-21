@@ -32,13 +32,15 @@ export default () => {
         alt="postImg"
         className="w-1/2 rounded"
       />
-      <div className="text-2xl font-bold">{data.getpost.title}</div>
-      <div>
-        {data.getpost.tags.map((tag, index) => {
-          return <span key={index}>{tag}</span>;
-        })}
+      <div className="mt-4 space-y-2.5">
+        <div className="text-3xl font-bold">{data.getpost.title}</div>
+        <div className="flex space-x-2 text-xs">
+          {data.getpost.tags.map((tag, index) => {
+            return <span key={index}>{tag}</span>;
+          })}
+        </div>
       </div>
-      <div className="w-1/2" ref={container} />
+      <div id="write" className="w-1/2 prose prose-red" ref={container} />
     </div>
   );
 };

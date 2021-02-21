@@ -1,20 +1,26 @@
-/* ./styles/globals.css */
-@tailwind base;
+/*导入全局样式*/
+@import "/drake.css";
+/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-2xl;
-  }
-  h2 {
-    @apply text-xl;
-  }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
     -webkit-font-smoothing: antialiased;
+    color: #454d64;
+    font-size: 15px
+  }
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre{
     color: #454d64;
   }
   @font-face {
