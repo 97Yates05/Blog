@@ -1,29 +1,48 @@
 import { gql, useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
 
-const QueryPost = gql`
+const QueryPosts = gql`
   query {
     querypost {
       id
       title
+      tags
     }
   }
 `;
 export const HomeContainer = () => {
-  const { loading, error, data } = useQuery(QueryPost);
-  console.log(data);
+  const { loading, error, data } = useQuery(QueryPosts);
+  const router = useRouter();
+
+  const handleClick = (id, title) => {
+    router.push({ pathname: `/posts/${title}`, query: { id } });
+  };
   if (loading) return <p>'Loading...'</p>;
   if (error) return <p>Error! ${error.message}</p>;
   return (
     <div className="flex flex-col items-center">
-      {data.querypost.map((value) => {
+      {data.querypost.map((post) => {
         return (
-          <div key={value.id} className="w-1/3 m-1.5 bg-white rounded flex">
+          <div key={post.id} className="w-1/3 m-1.5 bg-white rounded flex">
             <img
               src="https://image.yangchenhui.xin/blog/tree-5319431_1920.jpg"
               alt="postImg"
-              className="w-1/3 rounded"
+              className="w-1/3 rounded cursor-pointer"
+              onClick={() => handleClick(post.id, post.title)}
             />
-            <div>{value.title}</div>
+            <div className="p-4">
+              <div
+                className="font-bold text-xl cursor-pointer"
+                onClick={() => handleClick(post.id, post.title)}
+              >
+                {post.title}
+              </div>
+              <div>
+                {post.tags.map((tag) => {
+                  return <span className="mr-1 text-xs">{tag}</span>;
+                })}
+              </div>
+            </div>
           </div>
         );
       })}
