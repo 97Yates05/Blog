@@ -1,3 +1,3 @@
 export default () => {
-  return <div>这是header</div>
-}
+  return <div className="h-20 flex items-center justify-center text-3xl font-bold">Blog</div>;
+};

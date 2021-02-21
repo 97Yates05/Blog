@@ -1,10 +1,10 @@
 import Header from '../components/Header';
-import HomeContainer from '../components/HomeContainer';
+import { HomeContainer } from '../components/HomeContainer';
 import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-screen bg-gray-50">
       <Header />
       <HomeContainer />
       <Footer />
