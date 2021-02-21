@@ -23,6 +23,9 @@
   pre{
     color: #454d64;
   }
+  img{
+    width: 100%;
+  }
   @font-face {
     font-family: MyFont;
     src: url('/FZDouNTJ_Cu.OTF');

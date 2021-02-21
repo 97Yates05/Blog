@@ -3,10 +3,12 @@ import { useRouter } from 'next/router';
 
 const QueryPosts = gql`
   query {
-    querypost {
+    queryPost {
       id
       title
       tags
+      count
+      cover
     }
   }
 `;
@@ -20,13 +22,13 @@ export const HomeContainer = () => {
   if (loading) return <p>'Loading...'</p>;
   if (error) return <p>Error! ${error.message}</p>;
   return (
-    <div className="flex flex-col items-center">
-      {data.querypost.map((post) => {
+    <div className="flex flex-col items-center space-y-6 py-4">
+      {data.queryPost.map((post) => {
         return (
-          <div key={post.id} className="w-1/3 m-1.5 bg-white rounded flex">
+          <div key={post.id} className="w-1/3 bg-white rounded flex">
             <img
-              src="https://image.yangchenhui.xin/blog/tree-5319431_1920.jpg"
-              alt="postImg"
+              src={post.cover}
+              alt="postCover"
               className="w-1/3 rounded cursor-pointer"
               onClick={() => handleClick(post.id, post.title)}
             />
