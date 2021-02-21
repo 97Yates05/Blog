@@ -38,8 +38,12 @@ export const HomeContainer = () => {
                 {post.title}
               </div>
               <div>
-                {post.tags.map((tag) => {
-                  return <span className="mr-1 text-xs">{tag}</span>;
+                {post.tags.map((tag, index) => {
+                  return (
+                    <span className="mr-1 text-xs" key={index}>
+                      {tag}
+                    </span>
+                  );
                 })}
               </div>
             </div>

@@ -2,3 +2,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji';
+    -webkit-font-smoothing: antialiased;
+    color: #454d64;
+  }
+  @font-face {
+    font-family: MyFont;
+    src: url('/FZDouNTJ_Cu.OTF');
+  }
+}

@@ -1,7 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
-import marked from 'marked';
-import Vditor from 'vditor';
+import Editor from 'vditor';
 import { useRef } from 'react';
 
 const GetPost = gql`
@@ -21,7 +20,7 @@ export default () => {
   const { loading, error, data } = useQuery(GetPost, { variables: { id } });
   if (loading) return <p>'Loading...'</p>;
   if (data) {
-    Vditor.md2html(data.getpost.text).then((value) => {
+    Editor.md2html(data.getpost.text).then((value) => {
       container.current.innerHTML = value;
     });
   }
