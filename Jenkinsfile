@@ -12,11 +12,6 @@ pipeline {
          sh 'docker run --net=website --name=Blog --restart=always -p 4000:3000 -d personal/blog'
        }
     }
-    stage('删除空悬镜像') {
-      steps {
-        sh 'docker rmi $(docker images -f "dangling=true" -q)'
-      }
-    }
   }
   post {
       always {
