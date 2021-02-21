@@ -1,10 +1,14 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
+WORKDIR /home/node/app
 
-COPY package*.json ./
+ADD package.json /home/node/app/
 
-RUN npm install&npm build
+RUN npm install
+
+ADD . /home/node/app
+
+RUN npm run build
 
 COPY . .
 
