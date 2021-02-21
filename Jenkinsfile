@@ -6,6 +6,11 @@ pipeline {
         sh 'docker build -t personal/blog .'
       }
     }
+    stage('删除空悬镜像') {
+      steps {
+        sh 'docker rmi $(docker images -f "dangling=true" -q)'
+      }
+    }
   }
   post {
       always {

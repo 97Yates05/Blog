@@ -10,8 +10,6 @@ ADD . /home/node/app
 
 RUN npm run build
 
-COPY . .
-
 EXPOSE 3000
 
 CMD [ "npm", "start" ]
