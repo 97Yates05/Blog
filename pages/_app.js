@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:8080/graphql',
+  uri: 'https://blog.yangchenhui.xin/api/graphql',
   cache: new InMemoryCache(),
 });
 function MyApp({ Component, pageProps }) {
