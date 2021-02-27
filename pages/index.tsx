@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div className="h-screen bg-gray-50">
+    <div className="h-screen bg-gray-50 flex flex-col">
       <Header />
       <HomeContainer />
       <Footer />
