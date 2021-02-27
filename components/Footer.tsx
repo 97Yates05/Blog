@@ -1,4 +1,4 @@
-export default () => {
+const Footer = () => {
   return (
     <div className="mt-auto h-20 bg-gray-50 flex flex-col items-center justify-center text-sm">
       <div>Copyright © 2021 萧晨冰的博客</div>
@@ -9,3 +9,4 @@ export default () => {
     </div>
   );
 };
+export default Footer;

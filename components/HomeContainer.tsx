@@ -12,7 +12,7 @@ const QueryPosts = gql`
     }
   }
 `;
-export const HomeContainer = () => {
+const HomeContainer = () => {
   const { loading, error, data } = useQuery(QueryPosts);
   const router = useRouter();
 
@@ -51,3 +51,4 @@ export const HomeContainer = () => {
     </div>
   );
 };
+export default HomeContainer;

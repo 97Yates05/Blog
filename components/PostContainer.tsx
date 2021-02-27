@@ -15,7 +15,7 @@ const GetPost = gql`
   }
 `;
 
-export default () => {
+const PostContainer = () => {
   const router = useRouter();
   const { id } = router.query;
   const container = useRef(null);
@@ -42,3 +42,4 @@ export default () => {
     </div>
   );
 };
+export default PostContainer;
