@@ -1,25 +1,14 @@
-import { gql, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import Editor from 'vditor';
 import { useRef } from 'react';
-
-const GetPost = gql`
-  query post($id: ID!) {
-    getPost(id: $id) {
-      title
-      tags
-      text
-      count
-      cover
-    }
-  }
-`;
 
 const PostContainer = () => {
   const router = useRouter();
   const { id } = router.query;
   const container = useRef(null);
-  const { loading, error, data } = useQuery(GetPost, { variables: { id } });
+  const loading = true;
+  const error = null;
+  const data = null;
   if (loading) return <p>'Loading...'</p>;
   if (data) {
     Editor.md2html(data.getPost.text).then((value) => {

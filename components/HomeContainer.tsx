@@ -1,19 +1,9 @@
-import { gql, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 
-const QueryPosts = gql`
-  query {
-    queryPost {
-      id
-      title
-      tags
-      count
-      cover
-    }
-  }
-`;
 const HomeContainer = () => {
-  const { loading, error, data } = useQuery(QueryPosts);
+  const loading = true;
+  const error = null;
+  const data = null;
   const router = useRouter();
 
   const handleClick = (id, title) => {
