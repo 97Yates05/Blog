@@ -11,8 +11,9 @@ model post {
   id          Int       @id @default(autoincrement())
   title       String
   content     String?
+  cover       String
   tags        String[]
   count       Int?      @default(0)
-  create_time DateTime? @default(now()) @db.Timestamp(6)
-  update_time DateTime? @default(now()) @db.Timestamp(6)
+  createdAt DateTime? @default(now()) @map(name: "created_at") @db.Timestamp(6)
+  updatedAt DateTime? @updatedAt @map(name: "updated_at") @db.Timestamp(6)
 }
